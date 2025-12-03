@@ -41,7 +41,7 @@
             // qrImageDisplay
             // 
             this.qrImageDisplay.Location = new System.Drawing.Point(263, 12);
-            this.qrImageDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.qrImageDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.qrImageDisplay.Name = "qrImageDisplay";
             this.qrImageDisplay.Size = new System.Drawing.Size(150, 150);
             this.qrImageDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -50,8 +50,8 @@
             // 
             // newQrButton
             // 
-            this.newQrButton.Location = new System.Drawing.Point(476, 35);
-            this.newQrButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newQrButton.Location = new System.Drawing.Point(476, 61);
+            this.newQrButton.Margin = new System.Windows.Forms.Padding(2);
             this.newQrButton.Name = "newQrButton";
             this.newQrButton.Size = new System.Drawing.Size(116, 19);
             this.newQrButton.TabIndex = 1;
@@ -62,9 +62,10 @@
             // newQrTextBox
             // 
             this.newQrTextBox.Location = new System.Drawing.Point(476, 12);
-            this.newQrTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newQrTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.newQrTextBox.Multiline = true;
             this.newQrTextBox.Name = "newQrTextBox";
-            this.newQrTextBox.Size = new System.Drawing.Size(117, 20);
+            this.newQrTextBox.Size = new System.Drawing.Size(190, 45);
             this.newQrTextBox.TabIndex = 2;
             // 
             // newQrLabel
@@ -112,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 401);
+            this.ClientSize = new System.Drawing.Size(677, 401);
             this.Controls.Add(this.saveQrButton);
             this.Controls.Add(this.deleteQrButton);
             this.Controls.Add(this.qrListBox);
@@ -120,7 +121,7 @@
             this.Controls.Add(this.newQrTextBox);
             this.Controls.Add(this.newQrButton);
             this.Controls.Add(this.qrImageDisplay);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "QR Otomasyon";
             this.Load += new System.EventHandler(this.Form1_Load);
