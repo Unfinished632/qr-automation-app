@@ -26,6 +26,7 @@ namespace qr_automation_app
         private void Form1_Load(object sender, EventArgs e)
         {
             saveQrButton.Visible = false;
+            deleteQrButton.Visible = false;
 
             conn.Open();
 
@@ -62,11 +63,13 @@ namespace qr_automation_app
             {
                 qrImageDisplay.Image = null;
                 saveQrButton.Visible = false;
+                deleteQrButton.Visible = true;
                 return;
             }
             else
             {
                 saveQrButton.Visible = true;
+                deleteQrButton.Visible = true;
             }
 
                 OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM qr_codes", conn);
@@ -93,6 +96,7 @@ namespace qr_automation_app
             {
                 qrImageDisplay.Image = null;
                 saveQrButton.Visible = false;
+                deleteQrButton.Visible = false;
             }
         }
 
