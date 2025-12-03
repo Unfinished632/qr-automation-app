@@ -25,6 +25,8 @@ namespace qr_automation_app
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            saveQrButton.Visible = false;
+
             conn.Open();
 
             RefreshQRList();
@@ -54,7 +56,18 @@ namespace qr_automation_app
 
         private void qrListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM qr_codes", conn);
+            if(qrListBox.SelectedItem == null)
+            {
+                qrImageDisplay.Image = null;
+                saveQrButton.Visible = false;
+                return;
+            }
+            else
+            {
+                saveQrButton.Visible = true;
+            }
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter("SELECT * FROM qr_codes", conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
 
@@ -78,6 +91,19 @@ namespace qr_automation_app
             command.Parameters.Clear();
 
             RefreshQRList();
+        }
+
+        private void saveQrButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PNG (*.png)|*.png";
+            saveFileDialog.DefaultExt = "png";
+            saveFileDialog.AddExtension = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                qrImageDisplay.Image.Save(saveFileDialog.FileName);
+            }
         }
     }
 }
