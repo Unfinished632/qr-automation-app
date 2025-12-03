@@ -50,6 +50,7 @@
             // 
             // newQrButton
             // 
+            this.newQrButton.ForeColor = System.Drawing.Color.Black;
             this.newQrButton.Location = new System.Drawing.Point(476, 61);
             this.newQrButton.Margin = new System.Windows.Forms.Padding(2);
             this.newQrButton.Name = "newQrButton";
@@ -89,6 +90,7 @@
             // 
             // deleteQrButton
             // 
+            this.deleteQrButton.ForeColor = System.Drawing.Color.Black;
             this.deleteQrButton.Location = new System.Drawing.Point(263, 371);
             this.deleteQrButton.Margin = new System.Windows.Forms.Padding(2);
             this.deleteQrButton.Name = "deleteQrButton";
@@ -100,6 +102,7 @@
             // 
             // saveQrButton
             // 
+            this.saveQrButton.ForeColor = System.Drawing.Color.Black;
             this.saveQrButton.Location = new System.Drawing.Point(281, 166);
             this.saveQrButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveQrButton.Name = "saveQrButton";
@@ -113,6 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InfoText;
             this.ClientSize = new System.Drawing.Size(677, 401);
             this.Controls.Add(this.saveQrButton);
             this.Controls.Add(this.deleteQrButton);
@@ -121,6 +125,8 @@
             this.Controls.Add(this.newQrTextBox);
             this.Controls.Add(this.newQrButton);
             this.Controls.Add(this.qrImageDisplay);
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "QR Otomasyon";
