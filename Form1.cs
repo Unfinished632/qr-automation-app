@@ -40,6 +40,8 @@ namespace qr_automation_app
             command.Parameters.Clear();
 
             RefreshQRList();
+
+            newQrTextBox.Clear();
         }
 
         void RefreshQRList()
@@ -80,17 +82,18 @@ namespace qr_automation_app
 
         private void deleteQrButton_Click(object sender, EventArgs e)
         {
-            if(qrListBox.SelectedItem == null)
-            {
-                return;
-            }
-
             OleDbCommand command = new OleDbCommand("DELETE FROM qr_codes WHERE qr_text=@text", conn);
             command.Parameters.AddWithValue("@text", qrListBox.SelectedItem.ToString());
             command.ExecuteNonQuery();
             command.Parameters.Clear();
 
             RefreshQRList();
+
+            if (qrListBox.SelectedItem == null)
+            {
+                qrImageDisplay.Image = null;
+                saveQrButton.Visible = false;
+            }
         }
 
         private void saveQrButton_Click(object sender, EventArgs e)
