@@ -32,23 +32,27 @@
             this.newQrButton = new System.Windows.Forms.Button();
             this.newQrTextBox = new System.Windows.Forms.TextBox();
             this.newQrLabel = new System.Windows.Forms.Label();
+            this.qrListBox = new System.Windows.Forms.ListBox();
+            this.deleteQrButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.qrImageDisplay)).BeginInit();
             this.SuspendLayout();
             // 
             // qrImageDisplay
             // 
-            this.qrImageDisplay.Location = new System.Drawing.Point(371, 70);
+            this.qrImageDisplay.Location = new System.Drawing.Point(263, 12);
+            this.qrImageDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.qrImageDisplay.Name = "qrImageDisplay";
-            this.qrImageDisplay.Size = new System.Drawing.Size(180, 180);
+            this.qrImageDisplay.Size = new System.Drawing.Size(150, 150);
             this.qrImageDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.qrImageDisplay.TabIndex = 0;
             this.qrImageDisplay.TabStop = false;
             // 
             // newQrButton
             // 
-            this.newQrButton.Location = new System.Drawing.Point(636, 98);
+            this.newQrButton.Location = new System.Drawing.Point(476, 35);
+            this.newQrButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.newQrButton.Name = "newQrButton";
-            this.newQrButton.Size = new System.Drawing.Size(155, 23);
+            this.newQrButton.Size = new System.Drawing.Size(116, 19);
             this.newQrButton.TabIndex = 1;
             this.newQrButton.Text = "Yeni QR Kod Oluştur";
             this.newQrButton.UseVisualStyleBackColor = true;
@@ -56,29 +60,54 @@
             // 
             // newQrTextBox
             // 
-            this.newQrTextBox.Location = new System.Drawing.Point(636, 70);
+            this.newQrTextBox.Location = new System.Drawing.Point(476, 12);
+            this.newQrTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.newQrTextBox.Name = "newQrTextBox";
-            this.newQrTextBox.Size = new System.Drawing.Size(155, 22);
+            this.newQrTextBox.Size = new System.Drawing.Size(117, 20);
             this.newQrTextBox.TabIndex = 2;
             // 
             // newQrLabel
             // 
             this.newQrLabel.AutoSize = true;
-            this.newQrLabel.Location = new System.Drawing.Point(557, 73);
+            this.newQrLabel.Location = new System.Drawing.Point(417, 14);
+            this.newQrLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.newQrLabel.Name = "newQrLabel";
-            this.newQrLabel.Size = new System.Drawing.Size(73, 16);
+            this.newQrLabel.Size = new System.Drawing.Size(58, 13);
             this.newQrLabel.TabIndex = 3;
             this.newQrLabel.Text = "Yazı Verisi:";
             // 
+            // qrListBox
+            // 
+            this.qrListBox.FormattingEnabled = true;
+            this.qrListBox.Location = new System.Drawing.Point(12, 12);
+            this.qrListBox.Name = "qrListBox";
+            this.qrListBox.Size = new System.Drawing.Size(246, 381);
+            this.qrListBox.TabIndex = 4;
+            this.qrListBox.SelectedIndexChanged += new System.EventHandler(this.qrListBox_SelectedIndexChanged);
+            // 
+            // deleteQrButton
+            // 
+            this.deleteQrButton.Location = new System.Drawing.Point(263, 371);
+            this.deleteQrButton.Margin = new System.Windows.Forms.Padding(2);
+            this.deleteQrButton.Name = "deleteQrButton";
+            this.deleteQrButton.Size = new System.Drawing.Size(116, 19);
+            this.deleteQrButton.TabIndex = 5;
+            this.deleteQrButton.Text = "QR Kodu Sil";
+            this.deleteQrButton.UseVisualStyleBackColor = true;
+            this.deleteQrButton.Click += new System.EventHandler(this.deleteQrButton_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 493);
+            this.ClientSize = new System.Drawing.Size(634, 401);
+            this.Controls.Add(this.deleteQrButton);
+            this.Controls.Add(this.qrListBox);
             this.Controls.Add(this.newQrLabel);
             this.Controls.Add(this.newQrTextBox);
             this.Controls.Add(this.newQrButton);
             this.Controls.Add(this.qrImageDisplay);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "QR Otomasyon";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -94,6 +123,8 @@
         private System.Windows.Forms.Button newQrButton;
         private System.Windows.Forms.TextBox newQrTextBox;
         private System.Windows.Forms.Label newQrLabel;
+        private System.Windows.Forms.ListBox qrListBox;
+        private System.Windows.Forms.Button deleteQrButton;
     }
 }
 
